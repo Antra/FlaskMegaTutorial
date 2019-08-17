@@ -2,6 +2,11 @@
 Following the Flask Mega Tutorial by Miguel Grinberg
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
+## Python mailserver
+For debugging purposes, it can be handy to let Python listen for mailserver requests, e.g. to listen on port 8025:
+
+```python -m smtpd -n -c DebuggingServer localhost:8025```
+
 # Other notes
 ## VS Code re-breaks import statements
 Fix for VS Code moving ```from app import routes, models``` up to the top of the file.
