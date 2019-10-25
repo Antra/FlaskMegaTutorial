@@ -62,3 +62,7 @@ Uses [ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/cur
 run with e.g. ```C:/Utils/elasticsearch-7.4.1/bin/elasticsearch.bat```, can also run as a service with ```bin/elasticsearch-service.bat install|remove|start|stop|manager```.
 
 Configuration files are stored in ```config/elasticsearch.yml```.
+
+## Creating secret keys
+One option is to UUIDs, e.g. ```python -c "import uuid; print(uuid.uuid4().hex)"```
+Never-ever-ever store the secret keys directly in the application -- utilise the .env (and ```from dotenv import load_dotenv```) to hold the key -- and obviously don't put the .env files in Git. ;)
