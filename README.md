@@ -55,3 +55,10 @@ Install pylint-flask: ```pip install pylint-flask```
 Then ensure VS Code runs with pylink using pylint-flask; add ```"python.linting.pylintArgs": ["--load-plugins", "pylint_flask"]``` to settings.json (either user or workspace), [Source](https://stackoverflow.com/questions/28193025/pylint-cant-find-sqlalchemy-query-member)
 
 Alternatively; ignore the error (caused by the classes inheriting from db.Model not having a query member until the code runs).
+
+## ElasticSearch
+Uses [ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-windows.html#install-windows) for searching.
+
+run with e.g. ```C:/Utils/elasticsearch-7.4.1/bin/elasticsearch.bat```, can also run as a service with ```bin/elasticsearch-service.bat install|remove|start|stop|manager```.
+
+Configuration files are stored in ```config/elasticsearch.yml```.
