@@ -36,6 +36,12 @@ pybabel update -i messages.pot -d app/translations
 ```
 
 # Other notes
+## User accounts
+*all passwords are: ```cat```*
+- antra
+- susan
+- 1
+
 ## VS Code re-breaks import statements
 Fix for VS Code moving ```from app import routes, models``` up to the top of the file.
 
