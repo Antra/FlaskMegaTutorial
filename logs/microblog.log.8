@@ -1,0 +1,50 @@
+2019-10-25 22:46:32,759 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-25 22:46:37,764 ERROR: Exception on /search [GET] [in g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "G:\Projects\FlaskMegaTutorial\app\main\routes.py", line 136, in search
+    g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
+  File "G:\Projects\FlaskMegaTutorial\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "G:\Projects\FlaskMegaTutorial\app\search.py", line 25, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\elasticsearch\client\utils.py", line 84, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\elasticsearch\client\__init__.py", line 805, in search
+    "GET", _make_path(index, "_search"), params=params, body=body
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\elasticsearch\transport.py", line 350, in perform_request
+    timeout=timeout,
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 257, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\elasticsearch\connection\base.py", line 182, in _raise_error
+    status_code, error_message, additional_info
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2019-10-25 22:49:47,163 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-25 22:49:57,114 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-25 23:10:32,233 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-25 23:14:32,344 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-25 23:14:36,175 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 07:54:51,400 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 07:56:03,439 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 10:15:06,906 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 10:28:53,312 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 10:50:40,868 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 10:50:45,885 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 11:12:25,256 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 11:14:04,011 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 11:25:58,251 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 11:26:06,287 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 11:38:58,220 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]

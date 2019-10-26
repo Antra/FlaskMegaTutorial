@@ -1,4 +1,4 @@
-2019-10-26 11:44:49,394 ERROR: Exception on /messages [GET] [in g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py:1891]
+2019-10-26 11:39:06,745 ERROR: Exception on /messages [GET] [in g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "G:\Projects\FlaskMegaTutorial\app\main\routes.py", line 181, in messages
-    next_url=next_url, prev_url=prev_url)
+  File "G:\Projects\FlaskMegaTutorial\app\main\routes.py", line 180, in messages
+    return render_template('messages.html', messages=messages.items, next_url=next_url, prev_url=prev_url)
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
@@ -81,5 +81,23 @@ Traceback (most recent call last):
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\lexer.py", line 683, in tokeniter
     filename)
 jinja2.exceptions.TemplateSyntaxError: unexpected ')'
-2019-10-26 11:45:51,620 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
-2019-10-26 11:46:34,764 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
+2019-10-26 11:39:22,856 ERROR: Exception on /notifications [GET] [in g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "G:\Projects\FlaskMegaTutorial\app\main\routes.py", line 188, in notifications
+    Notification.timestamp > since).order_by(Notification.timestamp.asc())
+TypeError: filter_by() takes 1 positional argument but 2 were given
+2019-10-26 11:40:07,659 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
