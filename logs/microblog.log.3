@@ -1,5 +1,46 @@
-2019-10-26 11:44:39,026 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
-2019-10-26 11:44:41,385 ERROR: Exception on /messages [GET] [in g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py:1891]
+2019-10-26 18:48:30,255 ERROR: Exception on /index [POST] [in g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 238, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\Antra\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Antra\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Antra\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Antra\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\Antra\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001861D890128>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,70 +56,53 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "G:\Projects\FlaskMegaTutorial\app\main\routes.py", line 181, in messages
-    next_url=next_url, prev_url=prev_url)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+  File "G:\Projects\FlaskMegaTutorial\app\main\routes.py", line 34, in index
+    db.session.commit()
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1027, in commit
+    self.transaction.commit()
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\sqlalchemy\orm\session.py", line 501, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\sqlalchemy\event\attr.py", line 259, in __call__
+    fn(*args, **kw)
+  File "G:\Projects\FlaskMegaTutorial\app\models.py", line 60, in after_commit
+    add_to_index(obj.__tablename__, obj)
+  File "G:\Projects\FlaskMegaTutorial\app\search.py", line 10, in add_to_index
+    current_app.elasticsearch.index(index=index, id=model.id, body=payload)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\elasticsearch\client\utils.py", line 84, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\elasticsearch\client\__init__.py", line 364, in index
+    "POST", _make_path(index, doc_type, id), params=params, body=body
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\elasticsearch\transport.py", line 350, in perform_request
+    timeout=timeout,
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 250, in perform_request
+    raise ConnectionError("N/A", str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x000001861D890128>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x000001861D890128>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2019-10-26 18:49:09,670 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:84]
+2019-10-26 18:52:24,997 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:84]
+2019-10-26 18:53:00,773 ERROR: Exception on /api/users/2 [PUT] [in g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "G:\Projects\FlaskMegaTutorial\app\templates\messages.html", line 11, in template
-    <a href="{{ prev_url or '#') }}">
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 875, in subparse
-    add_data(self.parse_tuple(with_condexpr=True))
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 620, in parse_tuple
-    args.append(parse())
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 432, in parse_expression
-    return self.parse_condexpr()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 437, in parse_condexpr
-    expr1 = self.parse_or()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 452, in parse_or
-    right = self.parse_and()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 459, in parse_and
-    left = self.parse_not()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 470, in parse_not
-    return self.parse_compare()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 474, in parse_compare
-    expr = self.parse_math1()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 496, in parse_math1
-    left = self.parse_concat()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 507, in parse_concat
-    args = [self.parse_math2()]
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 517, in parse_math2
-    left = self.parse_pow()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 528, in parse_pow
-    left = self.parse_unary()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 546, in parse_unary
-    node = self.parse_primary()
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\parser.py", line 564, in parse_primary
-    next(self.stream)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\lexer.py", line 359, in __next__
-    self.current = next(self._iter)
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\lexer.py", line 562, in wrap
-    for lineno, token, value in stream:
-  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\lexer.py", line 683, in tokeniter
-    filename)
-jinja2.exceptions.TemplateSyntaxError: unexpected ')'
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\Projects\FlaskMegaTutorial\app\api\users.py", line 72, in update_user
+    return jsonify(data.to_dict())
+AttributeError: 'dict' object has no attribute 'to_dict'
+2019-10-26 18:53:31,002 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:84]
+2019-10-26 18:58:58,522 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:84]
+2019-10-26 18:59:01,955 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:84]
+2019-10-26 19:03:33,800 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:84]
+2019-10-26 19:04:28,086 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:84]
+2019-10-26 19:05:10,814 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:84]
+2019-10-26 19:08:23,675 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:84]
+2019-10-26 19:08:25,983 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:84]

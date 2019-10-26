@@ -1,4 +1,4 @@
-2019-10-26 11:40:10,877 ERROR: Exception on /messages [GET] [in g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py:1891]
+2019-10-26 11:46:37,247 ERROR: Exception on /messages [GET] [in g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,7 +14,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "G:\Projects\FlaskMegaTutorial\app\main\routes.py", line 181, in messages
+  File "G:\Projects\FlaskMegaTutorial\app\main\routes.py", line 183, in messages
     next_url=next_url, prev_url=prev_url)
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\flask\templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
@@ -81,4 +81,3 @@ Traceback (most recent call last):
   File "g:\projects\flaskmegatutorial\venv\lib\site-packages\jinja2\lexer.py", line 683, in tokeniter
     filename)
 jinja2.exceptions.TemplateSyntaxError: unexpected ')'
-2019-10-26 11:40:20,972 INFO: Microblog startup! [in G:\Projects\FlaskMegaTutorial\app\__init__.py:76]
